@@ -2,7 +2,7 @@
 class SpriteKind:
     Boton = SpriteKind.create()
 
-def manejo_boton(sprite, otherSprite):
+def on_on_overlap(sprite, otherSprite):
     global Nivel
     if otherSprite == BotonCelcius and controller.A.is_pressed():
         Nivel = 1
@@ -10,7 +10,7 @@ def manejo_boton(sprite, otherSprite):
     if otherSprite == BotonFahreinheit and controller.A.is_pressed():
         Nivel = 2
         manejo_nivel()
-sprites.on_overlap(SpriteKind.player, SpriteKind.Boton, manejo_boton)
+sprites.on_overlap(SpriteKind.player, SpriteKind.Boton, on_on_overlap)
 
 def inicio(opcio: number):
     if opcio == 1:
